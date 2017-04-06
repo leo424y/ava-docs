@@ -1,52 +1,52 @@
 ___
-**备注**
+**備註**
 
-这是 [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-cc4aac3e9be04e0413c9520f223b493c) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`contributing.md`发生变化，那就意味着这份翻译文档是最新的）。
+這是 [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md) 的簡體中文翻譯。這個[連結](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-cc4aac3e9be04e0413c9520f223b493c) 用來檢視本翻譯與 AVA 的 master 分支是否有差別（如果你沒有看到`contributing.md`發生變化，那就意味著這份翻譯文件是最新的）。
 ___
-# 向 AVA 贡献
+# 向 AVA 貢獻
 
-✨ 感谢向 AVA 作出贡献！ ✨
+✨ 感謝向 AVA 作出貢獻！ ✨
 
-请注意，这个项目发布带有[贡献者的行为准则](code-of-conduct.md)，参与这个项目你需要同意并遵守其中的条款。
+請注意，這個項目釋出帶有[貢獻者的行為準則](code-of-conduct.md)，參與這個項目你需要同意並遵守其中的條款。
 
-翻译：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/contributing.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/contributing.md)
+翻譯：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/contributing.md), [簡體中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/contributing.md)
 
-## 我怎么贡献？
+## 我怎麼貢獻？
 
-### 改进文档
+### 改進文件
 
-作为 AVA 的用户你是帮助我们改进文档的最佳候选人，修改拼写错误，修复错误，更好的解释，更多的例子等等。为一些可以改进的事情提问题，[帮助我们翻译文档](https://github.com/avajs/ava-docs)，不管任何事情，即使是改善现在这个文档。
+作為 AVA 的使用者你是幫助我們改進文件的最佳候選人，修改拼寫錯誤，修復錯誤，更好的解釋，更多的例子等等。為一些可以改進的事情提問題，[幫助我們翻譯文件](https://github.com/avajs/ava-docs)，不管任何事情，即使是改善現在這個文件。
 
-### 改善问题
+### 改善問題
 
-一些问题在创建时缺少信息，不能重现，描述太过简单无效，帮助我们将他们变得更容易处理，因为处理问题需要大量时间，我们情愿将时间花在修复缺陷和添加新功能上面。
+一些問題在建立時缺少資訊，不能重現，描述太過簡單無效，幫助我們將他們變得更容易處理，因為處理問題需要大量時間，我們情願將時間花在修復缺陷和新增新功能上面。
 
-### 在问题中给出反馈
+### 在問題中給出反饋
 
-我们总是在问题跟踪器上寻找更多的讨论意见，这是一个影响 AVA 未来发展方向的好机会。
+我們總是在問題跟蹤器上尋找更多的討論意見，這是一個影響 AVA 未來發展方向的好機會。
 
-### 在我们的聊天室中闲聊
+### 在我們的聊天室中閒聊
 
-我们有一个[聊天室](https://gitter.im/avajs/ava)，可以进到里面潜水，跟我们聊天，或者帮助其他人。
+我們有一個[聊天室](https://gitter.im/avajs/ava)，可以進到裡面潛水，跟我們聊天，或者幫助其他人。
 
-### 提交问题
+### 提交問題
 
-- 问题跟踪器是针对问题的，请使用我们的[聊天室](https://gitter.im/avajs/ava) 或者 [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) 来寻求支持。
-- 在新开一个问题之前先搜索以前的问题。
-- 确保你使用的是最新版本的 AVA。
-- 用一个清晰和描述性好的标题。
-- 包含尽可能多的信息：重现问题的步骤，错误的信息，Node.js 的版本，操作系统等。
-- 在问题的描述上你花越多时间，越多的信息将给到我们。
-- [最好的问题提交方式是提供一个失败的测试案例。](https://twitter.com/sindresorhus/status/579306280495357953)
+- 問題跟蹤器是針對問題的，請使用我們的[聊天室](https://gitter.im/avajs/ava) 或者 [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) 來尋求支援。
+- 在新開一個問題之前先搜尋以前的問題。
+- 確保你使用的是最新版本的 AVA。
+- 用一個清晰和描述性好的標題。
+- 包含儘可能多的資訊：重現問題的步驟，錯誤的資訊，Node.js 的版本，作業系統等。
+- 在問題的描述上你花越多時間，越多的資訊將給到我們。
+- [最好的問題提交方式是提供一個失敗的測試案例。](https://twitter.com/sindresorhus/status/579306280495357953)
 
-### 提交一个 pull rquest
+### 提交一個 pull rquest
 
-- 重大的修改最好是先开一个问题来进行讨论，这样可以避免你做一些不必要的工作。
-- 对于长期远大的任务，你应该将你所做的工作在社区中提出来并尽快得到反馈，尽快开一个能证明你想法的最简版本的 pull request。在前期，不需要把事情做得完美，或者 100% 完成，只需要在标题添加一个 [WIP] 前缀，然后描述哪些工作你需要继续做的。这样评审人员就不会挑剔其中的小细节或者指出哪些你已经知道的改进点。
-- 新功能应该具备测试和文档。
-- 不要包含不相关的修改。
-- 在提交 pull request 之前检查代码和运行测试，通过执行`$ npm test`命令来完成。
-- 在一个[主题分支](https://github.com/dchelimsky/rspec/wiki/Topic-Branches) 中提交 pull request 而不是 master 分支。
-- 为 pull request 和 commit 使用一个清晰和描述性强的标题。
-- 写一个让人信服的描述来说明为什么我们要接受你的 pull request。说服我们是你的工作，需要回答“为什么”并提供用例。
-- 你可能被要求修改你的 pull request，但绝对没有必要去新开一个 pull request，[只需要更新原来那个就可以了。](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
+- 重大的修改最好是先開一個問題來進行討論，這樣可以避免你做一些不必要的工作。
+- 對於長期遠大的任務，你應該將你所做的工作在社羣中提出來並儘快得到反饋，儘快開一個能證明你想法的最簡版本的 pull request。在前期，不需要把事情做得完美，或者 100% 完成，只需要在標題新增一個 [WIP] 字首，然後描述哪些工作你需要繼續做的。這樣評審人員就不會挑剔其中的小細節或者指出哪些你已經知道的改進點。
+- 新功能應該具備測試和文件。
+- 不要包含不相關的修改。
+- 在提交 pull request 之前檢查程式碼和執行測試，通過執行`$ npm test`命令來完成。
+- 在一個[主題分支](https://github.com/dchelimsky/rspec/wiki/Topic-Branches) 中提交 pull request 而不是 master 分支。
+- 為 pull request 和 commit 使用一個清晰和描述性強的標題。
+- 寫一個讓人信服的描述來說明為什麼我們要接受你的 pull request。說服我們是你的工作，需要回答“為什麼”並提供用例。
+- 你可能被要求修改你的 pull request，但絕對沒有必要去新開一個 pull request，[只需要更新原來那個就可以了。](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)

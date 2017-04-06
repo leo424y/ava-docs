@@ -1,26 +1,26 @@
 ___
-**备注**
+**備註**
 
-这是 [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-0c25d982e94d600cb6b8e438a0e67169) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`when-to-use-plan.md`发生变化，那就意味着这份翻译文档是最新的）。
+這是 [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md) 的簡體中文翻譯。這個[連結](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-0c25d982e94d600cb6b8e438a0e67169) 用來檢視本翻譯與 AVA 的 master 分支是否有差別（如果你沒有看到`when-to-use-plan.md`發生變化，那就意味著這份翻譯文件是最新的）。
 ___
 
-# 什么时候使用`t.plan()`
+# 什麼時候使用`t.plan()`
 
-翻译：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/when-to-use-plan.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/when-to-use-plan.md)
+翻譯：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/when-to-use-plan.md), [簡體中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/when-to-use-plan.md)
 
-AVA 和 [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) 的一个主要不同是`t.plan()`的行为。在 AVA 中`t.plan()`只是用来断言期望的断言数是否正确，并不会自动结束测试。
+AVA 和 [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) 的一個主要不同是`t.plan()`的行為。在 AVA 中`t.plan()`只是用來斷言期望的斷言數是否正確，並不會自動結束測試。
 
 ## `t.plan()`不好的用法
 
-很多从`tap/tape`过渡过来的用户习惯在每个测试里大量使用`t.plan()`，尽管如此，在 AVA 里我们不认为这是一个“最佳实践”，我们反而认为`t.plan()`只有在少数情况才能提供其价值。
+很多從`tap/tape`過渡過來的使用者習慣在每個測試裡大量使用`t.plan()`，儘管如此，在 AVA 裡我們不認為這是一個“最佳實踐”，我們反而認為`t.plan()`只有在少數情況才能提供其價值。
 
-### 没有分支的同步测试
+### 沒有分支的同步測試
 
-在大部分同步测试中`t.plan()`是没有必要的。
+在大部分同步測試中`t.plan()`是沒有必要的。
 
 ```js
 test(t => {
-    // 不好：这里没有分支，t.plan 是无意义的
+    // 不好：這裡沒有分支，t.plan 是無意義的
     t.plan(2);
 
     t.is(1 + 1, 2);
@@ -28,7 +28,7 @@ test(t => {
 });
 ```
 
-`t.plan()`在这里并没有提供任何价值，并且如果你决定添加或删除断言时会带来额外的工作。
+`t.plan()`在這裡並沒有提供任何價值，並且如果你決定新增或刪除斷言時會帶來額外的工作。
 
 ### Promises 期望得到 resolve
 
@@ -42,11 +42,11 @@ test(t => {
 });
 ```
 
-简单看一下，这个测试充分利用了`t.plan()`的优势，因为这里面涉及到了异步 promise 处理。尽管如此在这个测试里还有一些问题：
+簡單看一下，這個測試充分利用了`t.plan()`的優勢，因為這裡面涉及到了非同步 promise 處理。儘管如此在這個測試裡還有一些問題：
 
-1. `t.plan()`用在这里大概是为了防止`somePromise()`可能被 reject 的情况，但返回一个 reject 的 promise 测试始终会失败。
+1. `t.plan()`用在這裡大概是為了防止`somePromise()`可能被 reject 的情況，但返回一個 reject 的 promise 測試始終會失敗。
 
-2. 使用`async`/`await`可能会更好。
+2. 使用`async`/`await`可能會更好。
 
 ```js
 test(async t => {
@@ -58,22 +58,22 @@ test(async t => {
 
 `t.plan()`有很多可接受的用法。
 
-### Promise 带上一个`.catch()`块
+### Promise 帶上一個`.catch()`塊
 
 ```js
 test(t => {
     t.plan(2);
 
     return shouldRejectWithFoo().catch(reason => {
-        t.is(reason.message, 'Hello') // 如果你关心的是 message 的话使用 t.throws() 更好
+        t.is(reason.message, 'Hello') // 如果你關心的是 message 的話使用 t.throws() 更好
         t.is(reason.foo, 'bar');
     });
 });
 ```
 
-在这里，`t.plan()`用来确保`catch`块中的代码被执行，在大部分情况下，你更应该使用`t.throws()`断言，但这是一个可以接受的用法，因为`t.throws()`只允许你断言错误的`message`属性。
+在這裡，`t.plan()`用來確保`catch`塊中的程式碼被執行，在大部分情況下，你更應該使用`t.throws()`斷言，但這是一個可以接受的用法，因為`t.throws()`只允許你斷言錯誤的`message`屬性。
 
-### 确保一个 catch 语句发生
+### 確保一個 catch 語句發生
 
 ```js
 test(t => {
@@ -82,15 +82,15 @@ test(t => {
     try {
         shouldThrow();
     } catch (err) {
-        t.is(err.message, 'Hello') // 如果你关心的是 message 的话使用 t.throws() 更好
+        t.is(err.message, 'Hello') // 如果你關心的是 message 的話使用 t.throws() 更好
         t.is(err.foo, 'bar');
     }
 });
 ```
 
-像上面这种`try`/`catch`的情况，使用`t.throws()`一般是个更好的选择，但它只允许你断言错误的`message`属性。
+像上面這種`try`/`catch`的情況，使用`t.throws()`一般是個更好的選擇，但它只允許你斷言錯誤的`message`屬性。
 
-### 确保多个 callback 被真正调用
+### 確保多個 callback 被真正呼叫
 
 ```js
 test.cb(t => {
@@ -107,11 +107,11 @@ test.cb(t => {
 });
 ```
 
-上面确保`callbackB`先被调用（且只调用一次），紧接着调用`callbackA`，其他的组合不会满足计划。
+上面確保`callbackB`先被呼叫（且只呼叫一次），緊接著呼叫`callbackA`，其他的組合不會滿足計劃。
 
-### 测试带有分支语句
+### 測試帶有分支語句
 
-在大部分情况下，在测试中使用复杂的分支是一个坏主意，一个明显的例外是用来测试自动生成的东西（可能来自一个 JSON 文档）。下面的`t.plan()`用来确保 JSON 输入的正确性：
+在大部分情況下，在測試中使用複雜的分支是一個壞主意，一個明顯的例外是用來測試自動生成的東西（可能來自一個 JSON 文件）。下面的`t.plan()`用來確保 JSON 輸入的正確性：
 
 ```js
 const testData = require('./fixtures/test-definitions.json');
@@ -120,7 +120,7 @@ testData.forEach(testDefinition => {
     test(t => {
         const result = functionUnderTest(testDefinition.input);
 
-        // testDefinition 应该有一个`foo`或`bar`的预期而不是同时满足它们
+        // testDefinition 應該有一個`foo`或`bar`的預期而不是同時滿足它們
         t.plan(1);
 
         if (testDefinition.foo) {
@@ -134,6 +134,6 @@ testData.forEach(testDefinition => {
 });
 ```
 
-## 总结
+## 總結
 
-`t.plan()`有很多有效的使用方法，但不应该被盲目使用。一个好的经验法则是你的*测试*没有简单的，容易推断的，代码流的话你可以使用它。测试在 callback 里带有断言，`if`/`then`语句，`for`/`while`循环，并且（在一些情况下）`try`/`catch`块，都可以考虑使用`t.plan()`。
+`t.plan()`有很多有效的使用方法，但不應該被盲目使用。一個好的經驗法則是你的*測試*沒有簡單的，容易推斷的，程式碼流的話你可以使用它。測試在 callback 裡帶有斷言，`if`/`then`語句，`for`/`while`迴圈，並且（在一些情況下）`try`/`catch`塊，都可以考慮使用`t.plan()`。
